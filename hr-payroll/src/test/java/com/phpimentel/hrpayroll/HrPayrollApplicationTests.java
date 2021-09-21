@@ -1,4 +1,4 @@
-package com.example.phpimentel.hrpayroll;
+package com.phpimentel.hrpayroll;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

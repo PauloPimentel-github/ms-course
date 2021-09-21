@@ -1,6 +1,6 @@
-package com.example.phpimentel.hrpayroll.services;
+package com.phpimentel.hrpayroll.services;
 
-import com.example.phpimentel.hrpayroll.entities.Payment;
+import com.phpimentel.hrpayroll.entities.Payment;
 import org.springframework.stereotype.Service;
 
 @Service

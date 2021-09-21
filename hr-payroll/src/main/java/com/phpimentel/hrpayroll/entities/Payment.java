@@ -1,4 +1,4 @@
-package com.example.phpimentel.hrpayroll.entities;
+package com.phpimentel.hrpayroll.entities;
 
 import lombok.Data;
 

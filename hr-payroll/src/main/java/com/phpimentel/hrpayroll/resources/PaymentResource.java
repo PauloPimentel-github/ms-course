@@ -1,7 +1,7 @@
-package com.example.phpimentel.hrpayroll.resources;
+package com.phpimentel.hrpayroll.resources;
 
-import com.example.phpimentel.hrpayroll.entities.Payment;
-import com.example.phpimentel.hrpayroll.services.PaymentService;
+import com.phpimentel.hrpayroll.entities.Payment;
+import com.phpimentel.hrpayroll.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
