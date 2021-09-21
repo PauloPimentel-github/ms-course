@@ -2,6 +2,7 @@ package com.phpimentel.hrpayroll.services;
 
 import com.phpimentel.hrpayroll.entities.Payment;
 import com.phpimentel.hrpayroll.entities.dto.Worker;
+import com.phpimentel.hrpayroll.feignclients.WorkerFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,19 +14,12 @@ import java.util.Map;
 @Service
 public class PaymentService {
 
-    @Value("${hr-worker.host}")
-    private String hrWorkerHost;
-
     @Autowired
-    private RestTemplate restTemplate;
+    private WorkerFeignClient workerFeignClient;
 
     public Payment getPayment(Long workerId, int days) {
-        Map<String, String> params = new HashMap<>();
-        params.put("id", workerId.toString());
-        StringBuilder url = new StringBuilder(this.hrWorkerHost);
-        url.append("/workers/{id}");
 
-        Worker worker = this.restTemplate.getForObject(url.toString(), Worker.class, params);
+        Worker worker = this.workerFeignClient.findById(workerId).getBody();
         return new Payment(worker.getName(), worker.getDailyIncome(), days);
     }
 }
